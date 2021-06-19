@@ -83,6 +83,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+  margin-top: 0;
 }
 
 #switch {
@@ -170,9 +171,20 @@ main {
   margin: 0;
   width: 100%;
   color: var(--light-text);
-  background-color: var(--screen-background);
+  background-color: var(--keypad-background);
 }
 .attribution a {
   color: var(--equals-key-background);
   text-decoration: none;
+}
+
+@media (min-width: 550px) {
+  main {
+    height: 80%;
+    width: 500px;
+  }
+
+  #keypad {
+    gap: 2rem;
+  }
 }
