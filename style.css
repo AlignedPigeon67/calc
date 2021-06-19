@@ -20,8 +20,8 @@ html {
   --del-key-background: hsl(225, 21%, 49%);
   --del-key-shadow: hsl(224, 28%, 35%);
   --toggle-circle-color: hsl(6, 63%, 50%);
-  --equal-key-background: hsl(6, 63%, 50%);
-  --equal-key-shadow: hsl(6, 70%, 34%);
+  --equals-key-background: hsl(6, 63%, 50%);
+  --equals-key-shadow: hsl(6, 70%, 34%);
   --dark-text: hsl(221, 14%, 31%);
   --light-text: hsl(0, 0%, 100%);
 }
@@ -75,8 +75,9 @@ main {
   grid-area: switch;
   background-color: var(--toggle-background);
   width: 6rem;
-  height: 2rem;
+  height: 2.2rem;
   border-radius: 2rem;
+  padding: 0.3rem;
   text-align: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -87,8 +88,8 @@ main {
 #switch {
   background-color: var(--toggle-circle-color);
   border-radius: 100%;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 #theme-1 {
@@ -114,6 +115,51 @@ main {
   font-size: 3rem;
 }
 
+#keypad {
+  background-color: var(--keypad-background);
+  width: 100%;
+  height: 42rem;
+  border-radius: 1rem;
+  margin-top: 2.5rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1.2rem;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--key-background);
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 2.5em;
+  box-shadow: inset 0 -0.5rem 0.05rem var(--key-shadow);
+  color: var(--dark-text);
+}
+
+.key-action {
+  background-color: var(--del-key-background);
+  box-shadow: inset 0 -0.5rem 0.05rem var(--del-key-shadow);
+  color: var(--light-text);
+  font-size: 1.8rem;
+}
+
+#key-reset {
+  grid-row-start: 5;
+  grid-column: 1 / span 2;
+}
+
+#key-equals {
+  grid-row-start: 5;
+  grid-column: 3 / span 2;
+  background-color: var(--equals-key-background);
+  box-shadow: inset 0 -0.5rem 0.05rem var(--equals-key-shadow);
+  color: var(--light-text);
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -127,6 +173,6 @@ main {
   background-color: var(--screen-background);
 }
 .attribution a {
-  color: var(--equal-key-background);
+  color: var(--equals-key-background);
   text-decoration: none;
 }
