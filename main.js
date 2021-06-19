@@ -84,6 +84,9 @@ document.addEventListener("click", (e) => {
     operatorUsed = true;
     currentOperator = t.innerText;
     // You're here!
+  } else if (t.getAttribute("id") === "key-del") {
+    screenText = screenText.slice(0, -1);
+    screen.innerText = screenText;
   }
 });
 
