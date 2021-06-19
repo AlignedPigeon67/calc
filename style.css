@@ -22,8 +22,10 @@ html {
   --toggle-circle-color: hsl(6, 63%, 50%);
   --equals-key-background: hsl(6, 63%, 50%);
   --equals-key-shadow: hsl(6, 70%, 34%);
-  --dark-text: hsl(221, 14%, 31%);
-  --light-text: hsl(0, 0%, 100%);
+  --main-text: hsl(0, 0%, 100%);
+  --key-num-text: hsl(221, 14%, 31%);
+  --reset-del-text: hsl(0, 0%, 100%);
+  --equals-text: hsl(0, 0%, 100%);
 
   --switch-position: 1;
 }
@@ -43,7 +45,7 @@ main {
 
 #head {
   background-color: var(--main-background);
-  color: var(--light-text);
+  color: var(--main-text);
   display: flex;
   justify-content: space-between;
 }
@@ -108,7 +110,7 @@ main {
 
 #screen {
   background-color: var(--screen-background);
-  color: var(--light-text);
+  color: var(--main-text);
   width: 100%;
   height: 9rem;
   border-radius: 1rem;
@@ -140,8 +142,8 @@ main {
   border-radius: 0.5rem;
   text-align: center;
   font-size: 2.5em;
-  box-shadow: inset 0 -0.5rem 0.05rem var(--key-shadow);
-  color: var(--dark-text);
+  box-shadow: inset 0 -0.5rem 0.1rem var(--key-shadow);
+  color: var(--key-num-text);
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -153,21 +155,30 @@ main {
 .key-action {
   background-color: var(--del-key-background);
   box-shadow: inset 0 -0.5rem 0.05rem var(--del-key-shadow);
-  color: var(--light-text);
+  color: var(--main-text);
   font-size: 1.8rem;
+}
+
+#key-del {
+  color: var(--reset-del-text);
 }
 
 #key-reset {
   grid-row-start: 5;
   grid-column: 1 / span 2;
+  color: var(--reset-del-text);
 }
 
 #key-equals {
   grid-row-start: 5;
   grid-column: 3 / span 2;
   background-color: var(--equals-key-background);
-  box-shadow: inset 0 -0.5rem 0.05rem var(--equals-key-shadow);
-  color: var(--light-text);
+  box-shadow: inset 0 -0.5rem 0.1rem var(--equals-key-shadow);
+  color: var(--equals-text);
+}
+
+#key-equals:active {
+  box-shadow: none;
 }
 
 .attribution {
@@ -179,7 +190,7 @@ main {
   padding: 0.5rem;
   margin: 0;
   width: 100%;
-  color: var(--light-text);
+  color: var(--main-text);
   background-color: var(--keypad-background);
 }
 .attribution a {
@@ -191,6 +202,7 @@ main {
   main {
     height: 500px;
     width: 500px;
+    padding-top: 15vh;
   }
 
   #keypad {
