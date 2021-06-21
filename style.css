@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
 html {
   box-sizing: border-box;
@@ -35,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--main-background);
-  font-family: "Spartan", sans-serif;
+  font-family: 'Spartan', sans-serif;
 }
 
 main {
@@ -70,8 +70,8 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
-    "one two three"
-    "switch switch switch";
+    'one two three'
+    'switch switch switch';
   justify-items: center;
 }
 
@@ -88,6 +88,10 @@ main {
   justify-items: center;
   align-items: center;
   margin-top: 0;
+}
+
+#toggle-switch:hover {
+  cursor: pointer;
 }
 
 #switch {
@@ -148,6 +152,10 @@ main {
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.key:hover {
+  cursor: pointer;
+}
+
 .key:active {
   box-shadow: none;
   transform: translateY(0.1rem);
@@ -183,7 +191,7 @@ main {
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 1.1rem;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -208,5 +216,9 @@ main {
 
   #keypad {
     gap: 2rem;
+  }
+
+  .attribution {
+    font-size: 1.4rem;
   }
 }
