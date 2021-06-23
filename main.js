@@ -70,6 +70,8 @@ const calc = (() => {
   const screen = document.querySelector("[data-screen]");
 
   const updateDisplay = (input) => {
+    const charLimit = 13;
+    if (input.length > charLimit) input = input.slice(0, charLimit);
     screen.innerText = input;
   };
 
