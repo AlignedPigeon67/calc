@@ -110,13 +110,16 @@ operatorKeys.forEach(key => {
     if (equalsPressed) {
       operatorUsed = true;
       currentOperator = e.target.innerText;
+      screenText = ' ';
+      return;
     }
     if (currentOperator === '') {
       operatorUsed = true;
       currentOperator = e.target.innerText;
       memoryNumber = currentNumber;
       currentNumber = 0;
-      screenText = '';
+      screenText = ' ';
+      calc.updateDisplay(screenText);
     } else {
       memoryNumber = calc.calculate(
         memoryNumber,
@@ -126,7 +129,7 @@ operatorKeys.forEach(key => {
       calc.updateDisplay(memoryNumber);
       currentOperator = e.target.innerText;
       currentNumber = 0;
-      screenText = '';
+      screenText = ' ';
     }
   });
 });
